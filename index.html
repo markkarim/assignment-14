@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark</title>
+    <link rel="icon" href="./photo/images.png" />
+
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body>
+    <main class="py-5">
+      <div class="container">
+        <section>
+          <h1 class="text-black text-center position-relative mb-5 z-1">
+            Bookmarker
+          </h1>
+          <div class="pb-2 dotted">
+            <h2 class="text-center fs-4 pt-2 my-4 fw-bolder">
+              <i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites
+              <i class="fa-solid fa-bookmark"></i>
+            </h2>
+          </div>
+
+          <div class="mb-4 px-3">
+            <i class="fa-solid fa-book-bookmark me-2 fw-bold text-black"></i>
+            <label for="sitename" class="form-label fw-bold text-black">
+              Site Name
+            </label>
+            <input
+              type="text"
+              oninput="validate(this)"
+              class="form-control"
+              id="sitename"
+              placeholder="Bookmark Name" />
+          </div>
+
+          <div class="mb-4 px-3">
+            <i class="fa-solid fa-link me-2 fw-bold text-black"></i>
+
+            <label for="siteurl" class="form-label fw-bold text-black"
+              >Site URL</label
+            >
+            <input
+              type="url"
+              oninput="validate(this)"
+              class="form-control"
+              id="siteurl"
+              placeholder="Website URL" />
+          </div>
+
+  <!-- data-bs-toggle="modal"
+              data-bs-target="#exampleModal" -->
+
+
+          <div class="text-center pb-4 submit">
+            <button
+              type="button"
+
+              onclick="addFavoriteSites()"
+              class="btn btn-warning fw-bolder fs-6 text-white py-2 px-5">
+              Submit
+            </button>
+          </div>
+        </section>
+
+
+
+
+
+        <section class="px-4">
+          <table class="table table-hover my-4 text-center bg-white">
+            <caption
+              class="caption-top text-center rounded-top-2 fw-bold fs-3 bgcolor text-black">
+              Favorite Sites
+            </caption>
+            <thead class="fw-bold fs-5">
+              <tr>
+                <th scope="col">Index</th>
+                <th scope="col">Website Name</th>
+                <th scope="col">Visit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody id="favoritesites" class="fs-6 fw-semibold"></tbody>
+          </table>
+        </section>
+
+
+
+
+        <button
+          type="button"
+          id="model"
+          class="btn btn-primary d-none bmbm"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal">
+          Launch demo modal
+        </button> 
+
+        <!-- Modal -->
+
+          <div
+            class="modal fade "
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title fs-5" id="exampleModalLabel">
+                    <div class="circles d-flex">
+                      <span class="rounded-circle me-1"></span>
+                      <span class="rounded-circle me-1"></span>
+                      <span class="rounded-circle me-1"></span>
+                    </div>
+                  </h3>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <h4 class="fs-5 pt-1 pb-3 fw-semibold">
+                    Site Name or Url is not valid, Please follow the rules below
+                    :
+                  </h4>
+                  <p><i class="fa-regular fa-circle-right text-danger me-2"></i>Site name must contain at least 3 characters</p>
+                  <p><i class="fa-regular fa-circle-right text-danger me-2"></i>Site URL must be a valid one</p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+    
+
+
+
+    </main>
+
+
+
+
+    
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.min.js"></script>
+  </body>
+</html>
